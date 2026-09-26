@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PersediaanKu — Penatausahaan Persediaan</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-mark">P</span><div><strong>PersediaanKu</strong><small>Penatausahaan Barang</small></div></div>
+    <nav>
+      <button class="nav-item active" data-view="dashboard">⬚ <span>Dashboard</span></button>
+      <button class="nav-item" data-view="barang">▣ <span>Data Barang</span></button>
+      <button class="nav-item" data-view="transaksi">⇅ <span>Transaksi</span></button>
+      <button class="nav-item" data-view="laporan">▤ <span>Laporan</span></button>
+    </nav>
+    <div class="sidebar-footer">Aplikasi v1.0<br><span>Barang Pakai Habis</span></div>
+  </aside>
+
+  <main class="content">
+    <header class="topbar"><div><p class="eyebrow">PENATAUSAHAAN</p><h1 id="page-title">Dashboard</h1></div><div class="user"><span class="avatar">A</span><span>Administrator</span></div></header>
+    <div id="app"></div>
+  </main>
+
+  <div id="modal" class="modal hidden"><div class="modal-card"><div class="modal-head"><h2 id="modal-title">Tambah Barang</h2><button class="icon-btn" id="close-modal">×</button></div><form id="item-form"><input type="hidden" id="item-id"><label>Kode Barang<input id="item-code" required placeholder="ATK-001"></label><label>Nama Barang<input id="item-name" required placeholder="Contoh: Kertas A4"></label><div class="form-grid"><label>Satuan<select id="item-unit"><option>Rim</option><option>Buah</option><option>Kotak</option><option>Botol</option><option>Liter</option><option>Unit</option></select></label><label>Stok Minimum<input id="item-min" type="number" min="0" value="5" required></label></div><label>Harga Satuan (Rp)<input id="item-price" type="number" min="0" value="0" required></label><button class="primary full" type="submit">Simpan Barang</button></form></div></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
