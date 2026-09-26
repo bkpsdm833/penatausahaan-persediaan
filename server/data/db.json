@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": "user-admin-1",
+      "name": "Administrator",
+      "username": "admin",
+      "passwordHash": "$2a$10$J4gP2M/9vN0V8Vh8U2rSuO3K4c5yZk4v9A7G4Gixh6ys6X0Z4kGFG",
+      "role": "ADMIN",
+      "active": true
+    }
+  ],
+  "items": [
+    {
+      "id": "item-1",
+      "code": "ATK-001",
+      "name": "Kertas A4 80 gsm",
+      "unit": "Rim",
+      "minStock": 10,
+      "stock": 24,
+      "price": 58000
+    },
+    {
+      "id": "item-2",
+      "code": "ATK-002",
+      "name": "Pulpen Ballpoint",
+      "unit": "Buah",
+      "minStock": 10,
+      "stock": 8,
+      "price": 4500
+    }
+  ],
+  "transactions": [
+    {
+      "id": "tx-1",
+      "type": "MASUK",
+      "quantity": 10,
+      "note": "Pembelian awal",
+      "itemId": "item-1",
+      "userId": "user-admin-1",
+      "date": "2026-09-26T08:00:00.000Z"
+    }
+  ],
+  "auditLogs": []
+}

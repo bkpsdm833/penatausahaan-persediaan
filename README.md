@@ -1,89 +1,63 @@
-# PersediaanKu
+# PersediaanKu Fullstack Starter
 
-Aplikasi web ringan untuk penatausahaan persediaan barang pakai habis.
+Aplikasi penatausahaan persediaan barang pakai habis dengan stack:
+- Frontend: React + Vite
+- Backend: Express + JWT + JSON storage
+- Styling: CSS custom
 
-## Fitur MVP
+## Cara menjalankan
 
-- **Dashboard** - Ringkasan jumlah jenis barang, nilai persediaan, transaksi, dan stok menipis.
-- **Data Barang** - CRUD data barang: kode, nama, satuan, stok minimum, dan harga satuan.
-- **Transaksi** - Pencatatan transaksi masuk/keluar dengan pembaruan stok otomatis.
-- **Laporan** - Rekap stok dan nilai persediaan yang dapat dicetak.
-- **Penyimpanan Lokal** - Data tersimpan menggunakan `localStorage` sehingga dapat langsung dicoba tanpa server.
-- **Responsif** - Tampilan menyesuaikan untuk desktop dan perangkat mobile.
-
-## Fitur Utama
-
-### 1. Dashboard
-- Statistik jumlah jenis barang
-- Total nilai persediaan
-- Jumlah transaksi bulan ini
-- Notifikasi barang stok menipis
-- Riwayat transaksi terbaru
-- Visualisasi barang dengan stok kritis
-
-### 2. Data Barang
-- Tambah barang baru dengan kode, nama, satuan, stok minimum, dan harga
-- Edit data barang yang sudah ada
-- Hapus barang dari sistem
-- Pencarian dan filter berdasarkan kondisi stok
-- Indikator status stok (Aman/Menipis)
-
-### 3. Transaksi
-- Catat penerimaan barang (Masuk)
-- Catat pengeluaran barang (Keluar)
-- Pembaruan stok otomatis sesuai transaksi
-- Riwayat lengkap transaksi
-- Validasi stok sebelum pengeluaran
-
-### 4. Laporan
-- Total penerimaan barang
-- Total pengeluaran barang
-- Stok barang saat ini
-- Nilai persediaan per barang
-- Fungsi cetak untuk laporan fisik
-
-## Cara Menjalankan
-
-### Langsung di Browser
-Buka `index.html` langsung di browser:
+### 1) Install dependency root
 ```bash
-open index.html  # macOS
-start index.html # Windows
+npm install
 ```
 
-### Dengan Server Lokal
-
-**Python 3:**
+### 2) Install dependency frontend dan backend
 ```bash
-python3 -m http.server 8000
+npm install --workspace client
+npm install --workspace server
 ```
 
-**Node.js (http-server):**
+### 3) Jalankan app secara bersamaan
 ```bash
-npx http-server
+npm run dev
 ```
 
-Kemudian buka http://localhost:8000
+Frontend: http://localhost:5173
+Backend: http://localhost:3000
 
-## Data yang Tersimpan
+## Akun awal
+- username: admin
+- password: Admin123!
 
-- Data barang disimpan di `localStorage` dengan key `persediaan-items`
-- Data transaksi disimpan di `localStorage` dengan key `persediaan-transactions`
-- Setiap perubahan otomatis tersimpan di browser
+## Fitur yang sudah ada
+- Login dan logout
+- Dashboard ringkasan stok
+- Master barang
+- Transaksi masuk/keluar
+- Laporan summary
+- Export Excel dan PDF
+- Audit log read-only
+- Role-based access (Admin, Petugas, Pimpinan)
 
-## Catatan untuk Pengembangan Lanjutan
+## Struktur folder
+```bash
+.
+├── client/
+│   ├── src/
+│   ├── index.html
+│   ├── package.json
+│   └── vite.config.js
+├── server/
+│   ├── data/
+│   ├── src/
+│   ├── .env.example
+│   └── package.json
+├── package.json
+├── .gitignore
+└── README.md
+```
 
-Untuk penggunaan produksi, perlu ditambahkan:
+## Catatan
 
-1. **Backend Server** - API untuk CRUD data
-2. **Database** - PostgreSQL/MySQL untuk penyimpanan data jangka panjang
-3. **Autentikasi** - Login & manajemen user
-4. **Audit Trail** - Catat siapa dan kapan data diubah
-5. **Export** - Unduh laporan ke PDF/Excel
-6. **Multi-user** - Sinkronisasi data antar user
-7. **Permission** - Hak akses berdasarkan role
-8. **Period Management** - Pengelolaan periode anggaran
-
-## Lisensi
-
-Open Source - Bebas digunakan dan dikembangkan
+Aplikasi ini bersifat starter app dan menggunakan file JSON sebagai storage pada tahap awal agar cepat dijalankan tanpa memerlukan database external. Untuk production, dapat diganti ke PostgreSQL atau MySQL menggunakan Prisma.
